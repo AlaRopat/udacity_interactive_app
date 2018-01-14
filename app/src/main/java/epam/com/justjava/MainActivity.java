@@ -3,6 +3,7 @@ package epam.com.justjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -25,8 +26,19 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         display(quantity);
-        int totalPrice = quantity * price;
-        displayMessage("Total: $" + totalPrice + "\n" + "Thank you!");
+        int totalPrice = calculatePrice();
+        CheckBox checkBox = findViewById(R.id.whipped_cream_checkbox);
+        displayOrderSummary("Quantity " + quantity + "\n" + "Total: $" + totalPrice + "\n" + "Thank you! " + "\n" + "Add Whipped cream? " + checkBox.isChecked());
+    }
+
+    /**
+     * This method calculate a total price for coffee
+     *
+     * @return Total price
+     */
+
+    private int calculatePrice() {
+        return quantity * price;
     }
 
     /**
@@ -37,15 +49,6 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    /**
-     * This method display a coffee price
-     *
-     * @param number common coffee price
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
 
     /**
      * This method is called when the plus button is clicked
@@ -73,8 +76,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given text on the screen.
      */
-    private void displayMessage(String message) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+    private void displayOrderSummary(String message) {
+        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
+
+
 }
