@@ -2,4 +2,6 @@
     <string name="app_name">Just Java</string>
     <string name="toppings">toppings</string>
     <string name="whipped_cream_checkbox">Whipped cream</string>
+    <string name="chocolate_checkbox">Chocolate</string>
+    <string name="user_name">name</string>
 </resources>
