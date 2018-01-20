@@ -1,5 +1,7 @@
 package epam.com.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int MIN_NUMBER_OF_COFFEE = 0;
     private static final int MAX_NUMBER_OF_COFFEE = 100;
     private static final String ORDER_SUMMARY_MESSAGE = "Name: %s\nQuantity %s\nTotal: $ %s\nAdd Whipped cream? %s\nAdd Chocolate? %s\nThank you! ";
+    private static final String SUBJECT_MESSAGE = "Coffee for %s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,15 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCream = findViewById(R.id.whipped_cream_checkbox);
         CheckBox chocolate = findViewById(R.id.chocolate_checkbox);
         EditText nameInput = findViewById(R.id.name_description_view);
-        displayOrderSummary(String.format(ORDER_SUMMARY_MESSAGE, nameInput.getText(), quantity, totalPrice, whippedCream.isChecked(), chocolate.isChecked()));
+        String name = nameInput.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, String.format(SUBJECT_MESSAGE, name));
+        intent.putExtra(Intent.EXTRA_TEXT, String.format(ORDER_SUMMARY_MESSAGE, nameInput.getText(), quantity, totalPrice, whippedCream.isChecked(), chocolate.isChecked()));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+
+        }
     }
 
     /**
