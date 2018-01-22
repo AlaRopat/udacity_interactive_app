@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Just Java</string>
+    <string name="app_name">Coffee Bar</string>
     <string name="toppings">toppings</string>
     <string name="whipped_cream_checkbox">Whipped cream</string>
     <string name="chocolate_checkbox">Chocolate</string>
