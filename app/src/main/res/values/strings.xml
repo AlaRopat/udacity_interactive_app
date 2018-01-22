@@ -4,4 +4,11 @@
     <string name="whipped_cream_checkbox">Whipped cream</string>
     <string name="chocolate_checkbox">Chocolate</string>
     <string name="user_name">name</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="order">Order</string>
+    <string name="total_price">$0</string>
+    <string name="increment">+</string>
+    <string name="zero_price">0</string>
+    <string name="decrement">-</string>
+    <string name="quantity">Quantity</string>
 </resources>
