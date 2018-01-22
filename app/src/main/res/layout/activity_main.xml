@@ -17,17 +17,13 @@
             android:id="@+id/name_description_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
             android:hint="@string/user_name"
-            android:inputType="textMultiLine"
-            android:layout_marginRight="16dp"/>
+            android:inputType="textMultiLine" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/toppings"
-            android:textAllCaps="true" />
+            style="@style/HeaderTextStyle"
+            android:text="@string/toppings" />
 
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
@@ -37,6 +33,7 @@
             android:paddingLeft="24dp"
             android:text="@string/whipped_cream_checkbox"
             android:textSize="16sp" />
+
         <CheckBox
             android:id="@+id/chocolate_checkbox"
             android:layout_width="wrap_content"
@@ -47,11 +44,8 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/quantity"
-            android:textAllCaps="true" />
+            style="@style/HeaderTextStyle"
+            android:text="@string/quantity" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,12 +80,8 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/order_summary"
-            android:textAllCaps="true" />
+            style="@style/HeaderTextStyle"
+            android:text="@string/order_summary" />
 
         <TextView
             android:id="@+id/order_summary_text_view"
